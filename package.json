@@ -1,9 +1,11 @@
 {
   "name": "salam123",
   "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test --headed"
+  },
   "devDependencies": {
     "@playwright/test": "^1.46.0",
     "@types/node": "^22.2.0"
-  },
-  "scripts": {}
+  }
 }
