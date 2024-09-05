@@ -1,6 +1,7 @@
 // const { test, expect } = require('@playwright/test');
 // const {randomInt} = require("crypto");
 // test('mouse', async ({page}) => {
+//     //goto
 //     await page.goto('https://www.wildberries.ru/');
 //     await page.waitForTimeout(1000);
 //     await page.locator('#searchInput').fill("коврик компьютерный большой")

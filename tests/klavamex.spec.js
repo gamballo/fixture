@@ -1,20 +1,13 @@
-// const { test, expect } = require('@playwright/test');
-// test('40 min zaderjka', async ({page}) => {
-//     await page.goto('https://www.wildberries.ru/');
-//     await page.waitForTimeout(1000);
-//     await page.locator('#searchInput').pressSequentially('клавиатура механическая',{delay:100})
-//     await page.waitForTimeout(1000);
-//     await page.keyboard.press('Enter')
-//     await page.getByRole('button', {name: 'Все фильтры'}).click()
-//     await page.waitForTimeout(1000);
-//     await page.getByText("аналоговая оптическая").click()
-//     await page.waitForTimeout(1000);
-//     await page.getByText("белый").click()
-//     await page.waitForTimeout(1000);
-//     await page.getByText("Bluetooth").click()
-//     await page.waitForTimeout(1000);
-//     await page.getByRole('button', { name: 'Показать', exact: true }).click()
-//     await page.waitForTimeout(1000);
-//     await page.locator(".product-card__wrapper").nth(0).click()
-//      await page.waitForTimeout(3000);
-// });
+import {test} from './fixture/base-class.ts'
+test('40 min zaderjka', async ({baseTest}) => {
+    await baseTest.goto('https://www.wildberries.ru/')
+    await baseTest.fillandenter('#searchInput','клавиатура механическая')
+    await baseTest.clickAndWait( "text=Все фильтры")
+    await baseTest.clickAndWait( "text=аналоговая оптическая ")
+    await baseTest.clickAndWait( "text=Черный")
+    await baseTest.clickAndWait( "text=Bluetooth 6")
+    await baseTest.clickAndWait( "text=Показать")
+    await baseTest.clickAndWait('.product-card__wrapper >> nth = 0')
+    await baseTest.page.waitForTimeout(1000)
+
+});
